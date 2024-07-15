@@ -11,9 +11,17 @@
     {% endblock %}
 </head>
 <body>
+    {% include 'main/top.html'%}
+    <hr>
     {% include 'main/nav.html'%}
+    <hr>
     {% block content %}
 
     {% endblock %}
+
+    <hr>
+    {% include 'main/reklama.html'%}
+    <hr>
+    {% include 'main/footer.html'%}
 </body>
 </html>
