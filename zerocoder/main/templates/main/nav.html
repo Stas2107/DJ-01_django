@@ -1,24 +1,26 @@
-<Ul>
-    <li><a href="">Главная страница</a></Li>
-    <li><a href="new">Вторая страница</a></Li>
-</ul>
+<!--<Ul>-->
+<!--    <li><a href="">Главная страница</a></Li>-->
+<!--    <li><a href="new">Вторая страница</a></Li>-->
+<!--</ul>-->
 
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-<!--    <title>Горизонтальное меню с таблицами</title>-->
-<!--</head>-->
-<!--<body>-->
-<!--    <table>-->
-<!--        <tr>-->
-<!--            <td><a href="">Главная страница</a></td>-->
-<!--            <td><a href="">Вторая страница</a></td>-->
-<!--        </tr>-->
-<!--    </table>-->
-<!--</body>-->
-<!--</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Горизонтальное меню с таблицами</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><a href="{% url 'home' %}">Главная страница</a></td>
+            <td><a href="{% url 'page2' %}">Вторая страница</a></td>
+            <td><a href="{% url 'news_home' %}">Новостная страница</a></td>
+        </tr>
+    </table>
+</body>
+</html>
 
 
 <!--<!DOCTYPE html>-->
