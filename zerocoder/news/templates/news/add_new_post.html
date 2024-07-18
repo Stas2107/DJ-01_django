@@ -6,27 +6,90 @@
 
 {% block content %}
 
-<div>
+<div class="form-container">
   <h2>Форма для добавления новостей</h2>
-  <form method="post">
-        {% csrf_token %}
-    <input type="text" placeholder="Заголовок новости"> <br>
-    {{ form.title }}
+  <form method="post" class="news-form">
+    {% csrf_token %}
 
-    <input type="text" placeholder="Краткое описание новости"> <br>
-    {{ form.short_description }}
+    <div class="form-group">
+      {{ form.title.label_tag }}<br>
+      {{ form.title }}
+    </div>
 
-    <textarea placeholder="Содержание новости"></textarea> <br>
-    {{ form.text }}
+    <div class="form-group">
+      {{ form.short_description.label_tag }}<br>
+      {{ form.short_description }}
+    </div>
 
-    <input type="date"> <br>
-    <input type="time"> <br>
-    {{ form.pub_date }}
+    <div class="form-group">
+      {{ form.text.label_tag }}<br>
+      {{ form.text }}
+    </div>
 
-    <input type="text" placeholder="Автор"> <br>
-    {{ form.author }}
+    <div class="form-group">
+      {{ form.pub_date.label_tag }}<br>
+      <input type="date" name="{{ form.pub_date.name }}" id="{{ form.pub_date.id_for_label }}">
+      {{ form.pub_date.errors }}
+    </div>
 
-    <button type="submit">Добавить новость</button>
+    <div class="form-group">
+      {{ form.author.label_tag }}<br>
+      {{ form.author }}
+    </div>
+
+    <button type="submit" class="submit-button">Добавить новость</button>
+    <p>{{ error }}</p>
   </form>
 </div>
+
+<style>
+  .form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+  }
+
+  .form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .submit-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+</style>
+
 {% endblock %}
