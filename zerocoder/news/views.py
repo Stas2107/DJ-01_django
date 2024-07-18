@@ -7,5 +7,5 @@ def home(request):
 	return render(request, 'news/news.html', {'news': news})
 
 def create_news(request):
-	form = News_postForm()
-    	return render(request, 'news/add_new_post.html', {'form': form})
+	form = News_postForm(request.POST)
+	return render(request, 'news/add_new_post.html', {'form': form})
