@@ -5,3 +5,6 @@ class News_postForm(ModelForm):
 	class Meta:
 		model = News_post
 		fields = ['title', 'short_description', 'text', 'author', 'pub_date']
+
+
+

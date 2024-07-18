@@ -1,22 +1,32 @@
 {% extends 'main/layoute.html' %}
 
 {% block title %}
-	<title>Страница для добавления новостей</title>
-	{% form %}
-{{ endblock }}
+  <title>Страница для добавления новостей</title>
+{% endblock %}
 
 {% block content %}
+
 <div>
-	<h2>Форма для добавления новостей</h2>
-	<form method="post" >
+  <h2>Форма для добавления новостей</h2>
+  <form method="post">
         {% csrf_token %}
-		<input type="text" placeholder="Заголовок новости"> <br>
-		<input type="text" placeholder="Краткое описание новости"> <br>
-		<textarea placeholder="Содержание новости"></textarea> <br>
-		<input type="date"> <br>
-		<input type="time"> <br>
-        <input type="text" placeholder="Автор"> <br>
-		<button type="submit">Добавить новость</button>
-	</form>
+    <input type="text" placeholder="Заголовок новости"> <br>
+    {{ form.title }}
+
+    <input type="text" placeholder="Краткое описание новости"> <br>
+    {{ form.short_description }}
+
+    <textarea placeholder="Содержание новости"></textarea> <br>
+    {{ form.text }}
+
+    <input type="date"> <br>
+    <input type="time"> <br>
+    {{ form.pub_date }}
+
+    <input type="text" placeholder="Автор"> <br>
+    {{ form.author }}
+
+    <button type="submit">Добавить новость</button>
+  </form>
 </div>
 {% endblock %}

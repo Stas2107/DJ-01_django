@@ -9,3 +9,4 @@ def home(request):
 def create_news(request):
 	form = News_postForm(request.POST)
 	return render(request, 'news/add_new_post.html', {'form': form})
+
