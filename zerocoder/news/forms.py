@@ -19,5 +19,6 @@ class News_postForm(ModelForm):
 			'title': TextInput(attrs={'class': 'form-control', 'placeholder': 'Заголовок новости'}),
 			'short_description': TextInput(attrs={'class': 'form-control', 'placeholder': 'Краткое описание новости'}),
 			'text': Textarea(attrs={'class': 'form-control', 'placeholder': 'Содержание новости'}),
-			'pub_date': DateTimeInput(attrs={'class': 'form-control', 'placeholder': 'Дата публикации'})
+			'pub_date': DateTimeInput(attrs={'class': 'form-control', 'placeholder': 'Дата публикации'}),
+			'author': TextInput(attrs={'class': 'form-control', 'placeholder': 'Автор'})
 		}

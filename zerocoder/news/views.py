@@ -12,6 +12,7 @@ def create_news(request):
 		form = News_postForm(request.POST)
 		if form.is_valid():
 			form.save()
+			return render(request, 'news/news.html')
 		else:
 			error = "Форма заполнена неверно"
 
