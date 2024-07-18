@@ -5,17 +5,20 @@
 {% endblock %}
 
 {% block content%}
-    <h1>Новостная страница</h1>
+<h1>Новостная страница</h1>
 
-{% for new in news %}
-	<div>
-		<h3> {{ new.title }} </h3>
-		<p4> {{ new.short_description }} </p4>
-		<p4> {{ new.text }} </p4>
-		<p5> {{ new.pub_date }} </p5>
-		<p5> {{ new.author }} </p5>
-	</div>
-{% endfor %}
-
+	{% if news %}
+		{% for new in news %}
+			<div>
+				<h3> {{ new.title }} </h3>
+				<p4> {{ new.short_description }} </p4>
+				<p4> {{ new.text }} </p4>
+				<p5> {{ new.pub_date }} </p5>
+				<p5> {{ new.author }} </p5>
+			</div>
+		{% endfor %}
+	{% else %}
+		<h4>Новостей нет</h4>
+	{% endif %}
 
 {% endblock %}

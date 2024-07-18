@@ -16,3 +16,6 @@ def data(request):
 
 def test(request):
     return HttpResponse("<h1>Это страница для тестов</h1>")
+
+def create_news(request):
+    return render(request, 'news/add_new_post.html')
